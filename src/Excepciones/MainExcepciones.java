@@ -2,6 +2,9 @@ package Excepciones;
 
 import org.iesch.MiExcepcion.MiExcepcion;
 
+import java.util.LinkedList;
+import java.util.List;
+
 
 public class MainExcepciones {
     public static void main(String[] args) {
@@ -49,7 +52,9 @@ public class MainExcepciones {
 //            //throw new RuntimeException(e);
 //        }
 
-        
+//        stackOverflow(0);
+
+        ourOfMemory();
     }
 
     // Unchecked Exceptions
@@ -91,5 +96,24 @@ public class MainExcepciones {
     public static void exampleArithmeticException() {
         double numero = 10 / 0;
         System.out.println(numero);
+    }
+
+    // Stack Overflow
+    public static void stackOverflow(int num) {
+        num++;
+        stackOverflow(num);
+    }
+
+    // Out off memory
+    public static void ourOfMemory() {
+        List<byte[]> list = new LinkedList<>();
+        int index = 1;
+
+        while (true) {
+            byte[] b = new byte[10 * 1024 * 1024]; // 10MB byte object
+            list.add(b);
+            Runtime rt = Runtime.getRuntime();
+            System.out.printf("[%3s] Memoria restante en la pila: %s%n", index++, rt.freeMemory());
+        }
     }
 }
