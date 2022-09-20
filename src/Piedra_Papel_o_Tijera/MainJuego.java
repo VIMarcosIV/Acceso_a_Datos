@@ -5,7 +5,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class MainJuego {
-    public static void main(String[] args) throws ExcepcionPiedraPapelTijera {
+    public static void main(String[] args){
         int opcion = 0;
         Scanner sc = new Scanner(System.in);
         System.out.println("¡Bienvenido a Piedra, papel o tijera!");
