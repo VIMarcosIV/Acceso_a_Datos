@@ -1,9 +1,11 @@
 package Ejercicio_Streams;
 
 
-
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
+import java.util.NoSuchElementException;
+import java.util.stream.Collectors;
 
 /*
  * Dada una lista de personas con los siguientes atributos:
@@ -34,29 +36,48 @@ public class Main {
     public static void main(String[] args) {
 
         List<Persona> lista = new ArrayList<>();
-
+        List<Persona> listaLG = new ArrayList<>();
+        List<Persona> listaMenor = new ArrayList<>();
+        List<Persona> listaMayor = new ArrayList<>();
+        List<Persona> listaCursost = new ArrayList<>();
+        List<Persona> listaCursosA = new ArrayList<>();
+        List<Persona> listaNombreMayor10 = new ArrayList<>();
         Inicializa(lista);
 
 
-
-
 //        - Listar todas las personas
+        // lista.stream().forEach(System.out::println);
 
 //        - Obtener a las personas cuyo nombre empieza por L o G
+        // listaLG = lista.stream().filter(persona -> persona.getNombre().startsWith("L") || persona.getNombre().startsWith("G")).collect(Collectors.toList());
+        //  listaLG.stream().forEach(System.out::println);
 
 //        - Imprimir el numero de personas
+        // System.out.println(lista.stream().count());
 
 //        - Imprimir el alumno con menor edad
 
+//        listaMenor = lista.stream().min(Comparator.comparingInt(Persona::getEdad)).stream().collect(Collectors.toList());
+//        listaMenor.stream().forEach(System.out::println);
+
 //        - Imprimir el alumno con mayor edad
+//        listaMayor = lista.stream().max(Comparator.comparingInt(Persona::getEdad)).stream().collect(Collectors.toList());
+//        listaMayor.stream().forEach(System.out::println);
 
 //        - Encontrar el primer alumno
+        //lista.stream().filter(persona -> persona.getId() == 1).forEach(System.out::println);
 
 //        - Listar las personas matriculadors en cursos que terminan en t
+//        listaCursost = lista.stream().filter(persona -> persona.getCurso().endsWith("t")).collect(Collectors.toList());
+//        listaCursost.stream().forEach(System.out::println);
 
 //       - Listar las personas que tienen un curso en el que el nombre contiene una A
+//        listaCursosA = lista.stream().filter(persona -> persona.getCurso().contains("A")).collect(Collectors.toList());
+//        listaCursosA.stream().forEach(System.out::println);
 
 //        - Listar las personas que el tamaño de su nombre sea mayor a 10 caracteres.-
+//        listaNombreMayor10 = lista.stream().filter(persona -> persona.getNombre().length() > 10).collect(Collectors.toList());
+//        listaNombreMayor10.stream().forEach(System.out::println);
 
     }
 

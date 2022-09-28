@@ -1,7 +1,8 @@
 package Ejercicio_Streams;
 
-public class Persona {
+import java.util.Comparator;
 
+public class Persona implements Comparable<Persona> {
     int id;
     String nombre;
     String apellidos;
@@ -76,5 +77,13 @@ public class Persona {
 
     public void setEdad(int edad) {
         this.edad = edad;
+    }
+
+
+
+
+    @Override
+    public int compareTo(Persona o) {
+        return 0;
     }
 }
